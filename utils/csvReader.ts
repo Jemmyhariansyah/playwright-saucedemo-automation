@@ -4,7 +4,7 @@ import path from "path";
 
 export function readCSV(filePath: string) {
   const fullPath = path.resolve(filePath);
-  console.log("filenya nih", fullPath);
+  // console.log("filenya nih", fullPath);
 
   const fileContent = fs.readFileSync(fullPath);
 
