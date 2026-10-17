@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "testName": "Test with valid user",
+    "email": "standard_user",
+    "password": "secret_sauce",
+    "expectedStatus": "success"
+  },
+  {
+    "id": 2,
+    "testName": "test with locked user",
+    "email": "locked_out_user",
+    "password": "secret_sauce",
+    "expectedStatus": "failed"
+  },
+  {
+    "id": 3,
+    "testName": "test with problem user",
+    "email": "problem_user",
+    "password": "secret_sauce",
+    "expectedStatus": "success"
+  },
+  {
+    "id": 4,
+    "testName": "test with error user",
+    "email": "error_user",
+    "password": "secret_sauce",
+    "expectedStatus": "success"
+  }
+]
