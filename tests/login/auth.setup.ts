@@ -11,7 +11,7 @@ test("Authentication", async ({ page }) => {
     superAdmin.validUser.email,
     superAdmin.validUser.password,
   );
-  await page.waitForURL("**/inventory.html", { timeout: 15000 });
+  await page.waitForURL("/inventory.html", { timeout: 15000 });
 
   //    Pastikan halaman produk benar-benar sudah tampil sebelum menyimpan sesi
   await expect(page.getByText("Products")).toBeVisible();
