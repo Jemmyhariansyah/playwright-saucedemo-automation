@@ -33,7 +33,7 @@ export default defineConfig({
     ignoreHTTPSErrors: true,
 
     // 1. Memunculkan tampilan browser secara otomatis (tanpa ketik --headed)
-    headless: false,
+    headless: !!process.env.CI ? true : false,
 
     // 2. Memperlambat jalannya aksi browser (wajib berada di dalam blok 'use')
     launchOptions: {
