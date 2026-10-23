@@ -29,7 +29,7 @@ export default defineConfig({
   reporter: [["html"], ["junit", { outputFile: "test-results/junit.xml" }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: process.env.BASE_URL,
+    baseURL: process.env.BASE_URL || "https://www.saucedemo.com",
     ignoreHTTPSErrors: true,
 
     // 1. Memunculkan tampilan browser secara otomatis (tanpa ketik --headed)
