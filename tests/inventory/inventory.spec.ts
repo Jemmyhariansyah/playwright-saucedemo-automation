@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { InventoryPage } from "../../pages/inventoryPage";
+import { LoginPage } from "../../pages/loginPage";
 // import BasePage from "../../pages/basePage";
 
 test("Verification Ensuring that the product catalogue’s home page loads successfully ", async ({
@@ -25,9 +26,11 @@ test("Verification Button Add to Cart", async ({ page }) => {
   await inventoryPage.goto();
 
   await inventoryPage.verifyClickButtonAddToCart();
+  await expect(inventoryPage.iconCartRed).toBeVisible();
   await inventoryPage.verifclickAddtoChartButton();
 
   await inventoryPage.verifClickRemoveButton();
+  await expect(inventoryPage.iconCartRed).not.toBeVisible();
   await inventoryPage.verifyRemoveButton();
 });
 

@@ -15,6 +15,7 @@ export class InventoryPage extends BasePage {
   readonly removeButton: Locator;
   readonly clickImageDetail: Locator;
   readonly clickTitleDetail: Locator;
+  readonly iconCartRed: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -37,6 +38,8 @@ export class InventoryPage extends BasePage {
       name: "Sauce Labs Backpack",
     });
     this.clickTitleDetail = page.locator("[data-test=inventory-item-name]");
+
+    this.iconCartRed = page.locator('[data-test = "shopping-cart-badge"]');
   }
 
   async goto() {
