@@ -16,6 +16,8 @@ export class InventoryPage extends BasePage {
   readonly clickImageDetail: Locator;
   readonly clickTitleDetail: Locator;
   readonly iconCartRed: Locator;
+  readonly activeOption: Locator;
+  readonly sortDropdown: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -25,7 +27,7 @@ export class InventoryPage extends BasePage {
     this.iconPaymen = page.locator('[data-test = "shopping-cart-link"]');
     // this.itemImage = page.locator('[data-test="item-4-img-link"]');
     this.itemImage = page.getByRole("img", { name: "Sauce Labs Backpack" });
-    this.itemTitle = page.locator('[data-test = "item-4-title-link"]');
+    this.itemTitle = page.locator('[data-test = "inventory-item-name"]').first();
     this.itemDesc = page.locator('[data-test = "inventory-item-desc"]');
     this.itemPrice = page.locator('[data-test = "inventory-item-price"]');
     // this.buttonCart = page.locator(
@@ -40,6 +42,10 @@ export class InventoryPage extends BasePage {
     this.clickTitleDetail = page.locator("[data-test=inventory-item-name]");
 
     this.iconCartRed = page.locator('[data-test = "shopping-cart-badge"]');
+
+    this.activeOption = page.locator('[data-test="product-sort-container"] option:checked');
+
+    this.sortDropdown = page.locator('[data-test="product-sort-container"]');
   }
 
   async goto() {
@@ -67,5 +73,9 @@ export class InventoryPage extends BasePage {
 
   async clickDetailWithTitle() {
     await this.clickTitleDetail.click();
+  }
+
+  async sortBy(optionValue: string) {
+    await this.sortDropdown.selectOption(optionValue);
   }
 }
