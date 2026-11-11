@@ -1,30 +1,26 @@
 [
   {
-    "id": 1,
-    "testName": "Test with valid user",
-    "email": "standard_user",
+    "username": "standard_user",
     "password": "secret_sauce",
-    "expectedStatus": "success"
+    "expectedStatus": "success",
+    "run": "yes"
   },
   {
-    "id": 2,
-    "testName": "test with locked user",
-    "email": "locked_out_user",
+    "username": "locked_out_user",
     "password": "secret_sauce",
-    "expectedStatus": "failed"
+    "expectedStatus": "failed",
+    "run": "no"
   },
   {
-    "id": 3,
-    "testName": "test with problem user",
-    "email": "problem_user",
+    "username": "problem_user",
     "password": "secret_sauce",
-    "expectedStatus": "success"
+    "expectedStatus": "success",
+    "run": "yes"
   },
   {
-    "id": 4,
-    "testName": "test with error user",
-    "email": "error_user",
+    "username": "error_user",
     "password": "secret_sauce",
-    "expectedStatus": "success"
+    "expectedStatus": "success",
+    "run": "yes"
   }
 ]
